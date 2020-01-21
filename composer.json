@@ -1,0 +1,14 @@
+{
+    "name": "sige/zhetaoke",
+    "description": "a php lib for zhetaoke api",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Michael Luthor",
+            "email": "michaelluthor@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
