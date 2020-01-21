@@ -1,0 +1,4 @@
+<?php
+define('ZHETAOKE_TEST_APPKEY', '*******');
+define('ZHETAOKE_TEST_SID', '*******');
+define('ZHETAOKE_TEST_PID', '*******');

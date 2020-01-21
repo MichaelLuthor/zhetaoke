@@ -1,1 +1,9 @@
+# config files
+test/config.php
+
+# IDE files
+.buildpath
+.project
+.settings/
+
 /vendor/
