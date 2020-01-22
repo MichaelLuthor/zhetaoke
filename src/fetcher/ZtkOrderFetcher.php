@@ -3,6 +3,7 @@ namespace sige\zhetaoke\fetcher;
 use sige\zhetaoke\util\ZtkApiParamHandlerTrait;
 use sige\zhetaoke\ZheTaoKe;
 use sige\zhetaoke\entity\ZtkOrder;
+use sige\zhetaoke\result\ZtkOrderFetchResult;
 /**
  * 新订单查询
  * @author 四格
@@ -153,13 +154,20 @@ class ZtkOrderFetcher {
         }
         
         $listInfo = $response['tbk_sc_order_details_get_response']['data'];
+        $result = new ZtkOrderFetchResult();
+        $result->hasNextPage = $listInfo['has_next'];
+        $result->hasPrePage = $listInfo['has_pre'];
+        $result->pageNo = $listInfo['page_no'];
+        $result->pageSize = $listInfo['page_size'];
+        $result->positionIndex = $listInfo['position_index'];
+        
         if ( !empty($listInfo['results']['publisher_order_dto']) ) {
             foreach ( $listInfo['results']['publisher_order_dto'] as $index => $orderData ) {
                 $order = new ZtkOrder();
                 $order->applyDataFromApiResponse($orderData);
-                $listInfo['results']['publisher_order_dto'][$index] = $order;
+                $result->addOrder($order);
             }
         }
-        return $listInfo;
+        return $result;
     }
 }

@@ -33,7 +33,7 @@ class ZtkPublisherInviteCodeGenerator {
      * @param string $id
      * @return self
      */
-    public function RelationId( $id ) {
+    public function setRelationId( $id ) {
         $this->setParam('relation_id', $id);
         return $this;
     }
