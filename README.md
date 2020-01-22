@@ -1,6 +1,8 @@
-# 折淘客PHP接口库
-
+折淘客PHP接口库
+-------------
 该lib是基于折淘客所公开的接口，实现了大部分功能的封装。
+
+![GitHub](https://img.shields.io/github/license/MichaelLuthor/zhetaoke) ![GitHub Release Date](https://img.shields.io/github/release-date/MichaelLuthor/zhetaoke)
 
 安装
 - composer 方式安装
