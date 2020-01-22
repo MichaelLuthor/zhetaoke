@@ -55,7 +55,7 @@ class ZtkTklCreator {
         $this->setParam('sid', ZheTaoKe::getInstance()->getConfig('sid'));
         $response = ZheTaoKe::getInstance()->call('open_tkl_create', $this->getParams());
         if ( 200 !== $response['status'] ) {
-            throw new \Exception("生成失败：[{$response['status']}]{$response['model']}");
+            throw new \Exception("生成失败：[{$response['status']}]{$response['content']}");
         }
         return $response['model'];
     }
